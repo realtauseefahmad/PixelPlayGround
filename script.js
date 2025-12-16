@@ -8,16 +8,16 @@ let autoSlideInterval;
 function updateSlide() {
     slide.style.transform = `translateX(-${index * 100}%)`;
 }
-// slide change logic
+
 function changeSlide(direction) {
     index = (index + direction + total) % total;
     updateSlide();
     resetAutoSlide();
 }
-// arrows
+
 rightArrow.addEventListener("click", () => changeSlide(1));
 leftArrow.addEventListener("click", () => changeSlide(-1));
-// auto slide
+
 function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
         changeSlide(1);
@@ -27,5 +27,24 @@ function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     startAutoSlide();
 }
-// start on load
 startAutoSlide();
+
+const newsCards = document.querySelectorAll(
+  ".todaynews .news-card, .todaynews .side-card"
+);
+let activeIndex = 0;
+function activateNews(index) {
+  newsCards.forEach(card => card.classList.remove("active"));
+  newsCards[index].classList.add("active");
+}
+setInterval(() => {
+  activeIndex = (activeIndex + 1) % newsCards.length;
+  activateNews(activeIndex);
+}, 4000);
+newsCards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    newsCards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
+});
+

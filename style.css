@@ -234,48 +234,86 @@ main header .arrow.left {
 main header .arrow.right {
   right: 20px;
 }
-
-section.todaynews {
-  width: 100%;
-  padding: 60px 25px;
+main .todaynews {
+  padding: 70px 25px;
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
-section.todaynews h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  text-align: center;
+main .todaynews .news-card.active,
+main .todaynews .side-card.active {
+  box-shadow: 0 0 30px rgba(255, 0, 180, 0.6), 0 0 50px rgba(0, 140, 255, 0.4);
+  transform: scale(1.03);
 }
-section.todaynews .newsgrid {
+main .todaynews h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: left;
+  border-left: 5px solid var(--pink-accent);
+  padding-left: 15px;
+  letter-spacing: 1px;
+}
+main .todaynews .news-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 3fr 1.2fr;
+  gap: 30px;
+}
+main .todaynews .news-main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+main .todaynews .news-main .news-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-section.todaynews .newsgrid .newsitem {
-  background: rgba(0, 140, 255, 0.1);
-  border-radius: 15px;
+main .todaynews .news-card {
+  background: linear-gradient(180deg, rgba(0, 140, 255, 0.18), rgba(0, 0, 0, 0.6));
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 140, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 0, 180, 0.25);
   transition: var(--transition-mid);
+  cursor: pointer;
 }
-section.todaynews .newsgrid .newsitem:hover {
-  box-shadow: var(--shadow-soft);
-  transform: translateY(-5px);
-}
-section.todaynews .newsgrid .newsitem img {
+main .todaynews .news-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-section.todaynews .newsgrid .newsitem .newscontent {
+main .todaynews .news-card h3 {
   padding: 15px;
-}
-section.todaynews .newsgrid .newsitem .newscontent h3 {
   font-size: 22px;
-  margin-bottom: 10px;
 }
-section.todaynews .newsgrid .newsitem .newscontent p {
-  font-size: 16px;
-  color: var(--white-soft);
+main .todaynews .news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(255, 0, 180, 0.45);
+}
+main .todaynews .news-card.big img {
+  height: 320px;
+}
+main .todaynews .news-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .todaynews .news-side .side-card {
+  background: linear-gradient(180deg, rgba(255, 0, 180, 0.18), rgba(0, 0, 0, 0.6));
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 140, 255, 0.35);
+  transition: var(--transition-mid);
+}
+main .todaynews .news-side .side-card img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .todaynews .news-side .side-card h4 {
+  padding: 12px;
+  font-size: 20px;
+}
+main .todaynews .news-side .side-card:hover {
+  transform: translateY(-4px);
 }/*# sourceMappingURL=style.css.map */
