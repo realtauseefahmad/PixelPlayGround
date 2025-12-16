@@ -156,7 +156,7 @@ main nav .navright > i:hover {
 }
 main header {
   width: 100%;
-  height: 730px;
+  height: 750px;
   position: relative;
   overflow: hidden;
 }
@@ -233,4 +233,49 @@ main header .arrow.left {
 }
 main header .arrow.right {
   right: 20px;
+}
+
+section.todaynews {
+  width: 100%;
+  padding: 60px 25px;
+  position: relative;
+  z-index: 3;
+}
+section.todaynews h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+section.todaynews .newsgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+section.todaynews .newsgrid .newsitem {
+  background: rgba(0, 140, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 140, 255, 0.2);
+  transition: var(--transition-mid);
+}
+section.todaynews .newsgrid .newsitem:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-5px);
+}
+section.todaynews .newsgrid .newsitem img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.todaynews .newsgrid .newsitem .newscontent {
+  padding: 15px;
+}
+section.todaynews .newsgrid .newsitem .newscontent h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+section.todaynews .newsgrid .newsitem .newscontent p {
+  font-size: 16px;
+  color: var(--white-soft);
 }/*# sourceMappingURL=style.css.map */
