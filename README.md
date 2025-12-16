@@ -48,18 +48,5 @@ This project is currently **desktop-focused**.
 1. Clone the repository:
 
 ```bash
-git clone
-
----
-📂 File Structure
--
-pixel-play-ground/
-│
-├─ index.html       # Main HTML file
-├─ style.css        # Compiled SCSS / styling
-├─ script.js        # JavaScript for slideshow & news interactions
-├─ arrow.png        # Arrow icons for slideshow
-└─ Plump Varsity.ttf # Custom font for logo
-
-
+git clone  https://github.com/realtauseefahmad/PixelPlayGround/tree/main
  
